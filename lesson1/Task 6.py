@@ -15,7 +15,10 @@ a и b и выводить одно натуральное число — ном
 6-й день: 3,22
 
 Ответ: на 6-й день спортсмен достиг результата — не менее 3 км.'''
-first_run = int(input("Введите количество киллометров: "))
+while True:
+    first_run = int(input("Введите положительное количество киллометров: "))
+    if first_run > 0:
+        break
 daily_result_increase = 1.1
 target_value = int(input("Введите цель: "))
 target_day = 1

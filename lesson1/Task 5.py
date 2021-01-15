@@ -10,7 +10,8 @@ costs = float(input("Введите издержки фирмы: "))
 if earnings > costs:
     print("Фирма работает с прибылью")
     profit = earnings - costs
-    print(f"Рентабельность выручки составляет: {profit}")
+    profitability = (profit / earnings) * 100
+    print(f"Рентабельность выручки составляет: {profitability}")
     employees = int(input("Введите численность сотрудников фирмы: "))
     print("Прибыль фирмы в расчете на одного сотрудника составляет: {:.2f}".format(profit / employees))
 elif earnings < costs:
