@@ -16,13 +16,13 @@ a и b и выводить одно натуральное число — ном
 
 Ответ: на 6-й день спортсмен достиг результата — не менее 3 км.'''
 while True:
-    first_run = int(input("Введите положительное количество киллометров: "))
-    if first_run > 0:
+    day_run = int(input("Введите положительное количество киллометров: "))
+    if day_run > 0:
         break
 daily_result_increase = 1.1
 target_value = int(input("Введите цель: "))
 target_day = 1
-while first_run < target_value:
-    first_run *= daily_result_increase
+while day_run < target_value:
+    day_run *= daily_result_increase
     target_day += 1
 print(f"на {target_day}-й день спортсмен достиг результата — не менее {target_value} км.")

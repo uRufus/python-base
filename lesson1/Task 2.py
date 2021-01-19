@@ -9,5 +9,5 @@ hours = user_input // 3600
 if hours > 24:
     hours %= 24
 minutes = (user_input % 3600) // 60
-seconds = (user_input % 3600) % 60
+seconds = user_input % 60
 print(f"Время {hours}:{minutes}:{seconds}")
