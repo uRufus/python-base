@@ -10,14 +10,15 @@
 
 # Первый вариант
 my_list = [7, 5, 3, 3, 2]
-print(my_list)
+print(f"Рейтинг {my_list}")
 user_input = int(input("Введите новый элемент рейтинга: "))
 my_list.append(user_input)
 my_list.sort(reverse=True)
-print(my_list)
+print(f"Новый рейтинг {my_list}")
 
 # Второй вариант
 my_list = [7, 5, 3, 3, 2]
+print(f"Рейтинг {my_list}")
 user_input = int(input("Введите новый элемент рейтинга: "))
 new_list = []
 check = 0
@@ -29,6 +30,6 @@ for element in my_list:
     new_list.append(element)
 if len(my_list) == len(new_list):
     new_list.append(user_input)
-print(new_list)
+print(f"Новый рейтинг {new_list}")
 
 
