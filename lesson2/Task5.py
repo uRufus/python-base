@@ -19,7 +19,7 @@ print(f"Новый рейтинг {my_list}")
 # Второй вариант
 my_list = [7, 5, 3, 3, 2]
 print(f"Рейтинг {my_list}")
-user_input = int(input("Введите новый элемент рейтинга: "))
+user_input = int(input("Введите новый элемент рейтинга 2: "))
 new_list = []
 check = 0
 for element in my_list:
@@ -32,4 +32,16 @@ if len(my_list) == len(new_list):
     new_list.append(user_input)
 print(f"Новый рейтинг {new_list}")
 
-
+# Третий вариант
+my_list = [7, 5, 3, 3, 2]
+print(f"Рейтинг {my_list}")
+user_input = int(input("Введите новый элемент рейтинга 3: "))
+check = 0
+for element in my_list:
+    if user_input > element:
+        my_list.insert(check, user_input)
+        break
+    check += 1
+if user_input not in my_list:
+    my_list.append(user_input)
+print(f"Новый рейтинг {my_list}")
