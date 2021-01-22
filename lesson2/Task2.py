@@ -74,3 +74,4 @@ else:
     list_of_elements[::2], list_of_elements[1::2] = list_of_elements[1::2], list_of_elements[::2]
     list_of_elements.append(last_element)
     print(list_of_elements)
+
