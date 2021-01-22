@@ -10,7 +10,7 @@ last_element = []
 even_element = 0
 list_of_elements = []
 while True:
-    element = input("Введите значение в список элементов. Чтобы закончить ввод нажмите 'Enter': ")
+    element = input("Вариант 1. Введите значение в список элементов. Чтобы закончить ввод нажмите 'Enter': ")
     if element != '':
         list_of_elements.append(element)
     else:
@@ -32,7 +32,7 @@ else:
 # Вариант 2
 list_of_elements = []
 while True:
-    element = input("Введите значение в список элементов. Чтобы закончить ввод нажмите 'Enter': ")
+    element = input("Вариант 2. Введите значение в список элементов. Чтобы закончить ввод нажмите 'Enter': ")
     if element != '':
         list_of_elements.append(element)
     else:
@@ -57,4 +57,20 @@ if len(odd_list) < len(even_list):
     new_list.append(even_list[index])
 print(new_list)
 
-
+# Вариант 3
+list_of_elements = []
+while True:
+    element = input("Вариант 3. Введите значение в список элементов. Чтобы закончить ввод нажмите 'Enter': ")
+    if element != '':
+        list_of_elements.append(element)
+    else:
+        break
+print(list_of_elements)
+if len(list_of_elements) % 2 == 0:
+    list_of_elements[::2], list_of_elements[1::2] = list_of_elements[1::2], list_of_elements[::2]
+    print(list_of_elements)
+else:
+    last_element = list_of_elements.pop()
+    list_of_elements[::2], list_of_elements[1::2] = list_of_elements[1::2], list_of_elements[::2]
+    list_of_elements.append(last_element)
+    print(list_of_elements)
