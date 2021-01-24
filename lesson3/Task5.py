@@ -10,39 +10,39 @@
 
 #Вариант с функцией без параметров
 def sum_func():
-    sum_of_numbers = 0
-    x = None
-    while x is None:
+    sum_of_numbers_var1 = 0
+    finish = None
+    while finish is None:
         list_of_numbers = input("Введите числа через пробел, чтобы программа расчитала их сумму.\n "
                                 "Если ввести '!', то программа закончит суммировать числа: ").split()
-        for i in list_of_numbers:
-            if i != "!":
-                sum_of_numbers += float(i)
+        for number in list_of_numbers:
+            if number != "!":
+                sum_of_numbers_var1 += float(number)
             else:
-                x = 1
+                finish = 1
                 break
-        print(f"Сумма введенных чисел: {sum_of_numbers}")
+        print(f"Сумма введенных чисел: {sum_of_numbers_var1}")
 
 
 sum_func()
 
 # Вариант с функцией c параметрами
-def sum_func(sum_of_numbers, numbers , y):
+def sum_func(sum_of_numbers, numbers , finish):
     for i in numbers:
         if i != "!":
             sum_of_numbers += float(i)
         else:
-            y = 1
+            finish = 1
             break
-    return sum_of_numbers, y
+    return sum_of_numbers, finish
 
 
-x = None
+continue_to_ask_for_numbers = None
 sum_of_numbers = 0
-while x is None:
+while continue_to_ask_for_numbers is None:
     list_of_numbers = input("Введите числа через пробел, чтобы программа расчитала их сумму.\n "
                             "Если ввести '!', то программа закончит суммировать числа: ").split()
-    sum_of_numbers, x = sum_func(sum_of_numbers, list_of_numbers, x)
+    sum_of_numbers, continue_to_ask_for_numbers = sum_func(sum_of_numbers, list_of_numbers, continue_to_ask_for_numbers)
     print(f"Сумма введенных чисел: {sum_of_numbers}")
 
 

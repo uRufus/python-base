@@ -14,7 +14,7 @@ def my_func(first_number, second_number):
     print(1 / second_number)
 
 
-x = int(input("Введите положительное число: "))
+x = float(input("Введите положительное число: "))
 y = int(input("Введите целое отрицательное число: "))
 my_func(x, y)
 
@@ -27,6 +27,6 @@ def my_func(first_number, second_number):
     print(1 / divisor)
 
 
-x = int(input("Введите положительное число: "))
+x = float(input("Введите положительное число: "))
 y = int(input("Введите целое отрицательное число: "))
 my_func(x, y)

@@ -3,21 +3,21 @@
 предусмотреть обработку ситуации деления на ноль.'''
 
 
-def numbers_division(number1, number2):
+def numbers_quotient(dividend, divisor):
     try:
-        number1 = float(number1)
-        number2 = float(number2)
+        dividend = float(dividend)
+        divisor = float(divisor)
     except ValueError:
-        return"Одно из чисел введено некорректно"
+        return "Одно из чисел введено некорректно"
     try:
-        division = number1 / number2
+        quotient = dividend / divisor
     except ZeroDivisionError:
         return "На ноль делить нельзя"
-    return division
+    return quotient
 
 
-first_number = input("Введите число которое будете делить:")
-second_number = input("Введите число на которое будете делить:")
+first_number = input("Введите число которое будете делить: ")
+second_number = input("Введите число на которое будете делить: ")
 print(f"Резльтат деления числа {first_number} на число {second_number}:"
-      f" {numbers_division(first_number, second_number)}")
+      f" {numbers_quotient(first_number, second_number)}")
 
