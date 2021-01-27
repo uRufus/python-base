@@ -19,9 +19,7 @@ def fact(a):
 
 file_name, factorial = argv
 
-for el in fact(int(factorial)):
-    print(el)
-
+[print(el) for el in fact(int(factorial))]
 
 
 
