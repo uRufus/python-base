@@ -5,19 +5,14 @@
 
 def numbers_quotient(dividend, divisor):
     try:
-        dividend = float(dividend)
-        divisor = float(divisor)
-    except ValueError:
-        return "Одно из чисел введено некорректно"
-    try:
         quotient = dividend / divisor
     except ZeroDivisionError:
         return "На ноль делить нельзя"
     return quotient
 
 
-first_number = input("Введите число которое будете делить: ")
-second_number = input("Введите число на которое будете делить: ")
+first_number = float(input("Введите число которое будете делить: "))
+second_number = float(input("Введите число на которое будете делить: "))
 print(f"Резльтат деления числа {first_number} на число {second_number}:"
       f" {numbers_quotient(first_number, second_number)}")
 
