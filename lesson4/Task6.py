@@ -30,7 +30,7 @@ def cycle_func(b):
             break
 
 
-file_name, number_my_func, number_cycle_func = argv
+number_my_func, number_cycle_func = argv[1:]
 count_func(int(number_my_func))
 cycle_func(int(number_cycle_func))
 

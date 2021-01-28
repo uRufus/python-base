@@ -19,8 +19,11 @@ def fact(a):
 
 file_name, factorial = argv
 
+# Вариант 1
 [print(el) for el in fact(int(factorial))]
 
+# Вариант 2
+print([el for el in fact(int(factorial))])
 
 
 
