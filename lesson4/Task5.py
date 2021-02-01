@@ -6,5 +6,7 @@
 '''
 from functools import reduce
 
+# Первый вариант
 print(reduce(lambda x, y: x * y, [i for i in range(100, 1001, 2)]))
-
+# Второй вариант
+print(reduce(lambda x, y: x * y, range(100, 1001, 2)))
