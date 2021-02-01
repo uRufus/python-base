@@ -12,6 +12,8 @@
 Пример словаря:
 {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 '''
+
+# Вариант 1
 subject_hours = {}
 with open("task6.txt", "r", encoding="utf-8") as file:
     for line in file.readlines():
@@ -25,3 +27,13 @@ with open("task6.txt", "r", encoding="utf-8") as file:
             subject_hours[words[0]] += int(hours)
 
 print(subject_hours)
+
+# Вариант 2
+subject_hours = {}
+with open("task6.txt", "r", encoding="utf-8") as file:
+    for line in file.readlines():
+        words = line.replace("(", " ").replace(":", "").split()
+        subject_hours[words[0]] = sum([int(number) for number in words[1:] if number.isdigit()])
+    print(subject_hours)
+
+
