@@ -14,6 +14,7 @@
 
 Подсказка: использовать менеджеры контекста.
 '''
+
 from json import dump
 with open("task7.txt", "r", encoding="utf-8") as file:
     firms = {}
@@ -29,3 +30,16 @@ with open("task7.txt", "r", encoding="utf-8") as file:
 with open("task7.json", "w", encoding="utf-8") as json_file:
     dump([firms, {"average_profit": round(profit / number_of_profit_firms, 2)}], json_file)
 
+# Вариант 2
+from json import dump
+with open("task7.txt", "r", encoding="utf-8") as file:
+    profit = 0
+    number_of_profit_firms = 0
+    firms = [line.split() for line in file.readlines()]
+    firms2 = {firm[0]: int(firm[2]) - int(firm[3]) for firm in firms}
+    for value in firms2.values():
+        if value >= 0:
+            profit += value
+            number_of_profit_firms += 1
+with open("task7.json", "w", encoding="utf-8") as json_file:
+    dump([firms2, {"average_profit": round(profit / number_of_profit_firms, 2)}], json_file)
