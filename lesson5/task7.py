@@ -30,7 +30,7 @@ with open("task7.txt", "r", encoding="utf-8") as file:
 with open("task7.json", "w", encoding="utf-8") as json_file:
     dump([firms, {"average_profit": round(profit / number_of_profit_firms, 2)}], json_file)
 
-# Вариант 2
+# # Вариант 2
 from json import dump
 with open("task7.txt", "r", encoding="utf-8") as file:
     profit = 0
@@ -43,3 +43,12 @@ with open("task7.txt", "r", encoding="utf-8") as file:
             number_of_profit_firms += 1
 with open("task7.json", "w", encoding="utf-8") as json_file:
     dump([firms2, {"average_profit": round(profit / number_of_profit_firms, 2)}], json_file)
+
+# Вариант 3
+from json import dump
+with open("task7.txt", "r", encoding="utf-8") as file:
+    firms = [line.split() for line in file.readlines()]
+    firms2 = {firm[0]: int(firm[2]) - int(firm[3]) for firm in firms}
+    ave_profit = [value for value in firms2.values() if value >= 0]
+    with open("task7.json", "w", encoding="utf-8") as json_file:
+        dump([firms2, {"average_profit": round(sum(ave_profit) / len(ave_profit), 2)}], json_file)
