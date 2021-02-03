@@ -18,10 +18,10 @@ class TrafficLight:
 
     def running(self, color):
         if color != self.__current_color:
-            return print("Вы ввели не тот знак светофора")
+            return print("Вы ввели неправильный сигнал светофора")
         sleep(self.traffic_lights[color][0])
+        print(f"Загорелся {self.__current_color} сигнал светофора")
         self.__current_color = self.traffic_lights[color][1]
-        print(f"Цвет светофора сменился на {self.__current_color}")
 
 
 traffic_light = TrafficLight()
