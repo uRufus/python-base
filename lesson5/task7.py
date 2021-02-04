@@ -51,4 +51,4 @@ with open("task7.txt", "r", encoding="utf-8") as file:
     firms2 = {firm[0]: int(firm[2]) - int(firm[3]) for firm in firms}
     ave_profit = [value for value in firms2.values() if value >= 0]
     with open("task7.json", "w", encoding="utf-8") as json_file:
-        dump([firms2, {"average_profit": round(sum(ave_profit) / len(ave_profit), 2)}], json_file)
+        dump([firms2, {"average_profit": round(sum(ave_profit) / len(ave_profit), 2)}], json_file, indent=True)
