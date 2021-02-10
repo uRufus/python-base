@@ -64,13 +64,14 @@ class Cell:
 
 cell_a = Cell(16)
 cell_b = Cell(2)
-cell_a.__add__(cell_b)
+cell_a + cell_b
 print(cell_a.cells)
-cell_a.__sub__(cell_b)
+cell_a - cell_b
 print(cell_a.cells)
-cell_a.__truediv__(cell_b)
-cell_a.__mul__(cell_b)
+cell_a / cell_b
+print(cell_a.cells)
+cell_a * cell_b
 print(cell_b.cells)
 print(cell_a.cells)
-print(cell_a.make_order(5))
+print(cell_a.make_order(7))
 
