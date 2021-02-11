@@ -7,7 +7,10 @@
 
 
 class ExceptZeroDiv(Exception):
-    pass
+    txt = "На ноль делить нельзя"
+
+    def __str__(self):
+        return f"{self.txt}"
 
 
 def zero_div_exception(a, b):
@@ -16,8 +19,8 @@ def zero_div_exception(a, b):
             print(a / b)
         else:
             raise ExceptZeroDiv
-    except ExceptZeroDiv:
-        print("На ноль делить нельзя")
+    except ExceptZeroDiv as error:
+        print(error)
 
 
 zero_div_exception(10, 0)
