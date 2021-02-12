@@ -45,12 +45,13 @@ class Matrix:
                     self.matrix[i][k] += int(other.matrix[i][k])
         else:
             print("Матрицы нельзя сложить")
+        return self.matrix
 
 
 first_matrix = Matrix([[31, 22], [37, 43], [51, 86]])
 second_matrix = Matrix([[29, 38], [23, 17], [9, 4]])
 print(first_matrix)
+print(first_matrix.matrix)
 print(first_matrix + second_matrix)
 print(first_matrix.matrix)
 print(first_matrix)
-

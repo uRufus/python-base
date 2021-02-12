@@ -36,18 +36,22 @@ class Cell:
 
     def __add__(self, other):
         self.cells += other.cells
+        return self.cells
 
     def __sub__(self, other):
         if (self.cells - other.cells) > 0:
             self.cells -= other.cells
+            return self.cells
         else:
             return "Вычитание клеток невозможно"
 
     def __mul__(self, other):
         self.cells *= other.cells
+        return self.cells
 
     def __truediv__(self, other):
         self.cells //= other.cells
+        return self.cells
 
     def make_order(self, cells_in_stage):
         return "".join(["*" if i % cells_in_stage != 0 else "*\n" for i in range(1, self.cells + 1)])
