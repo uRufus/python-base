@@ -25,6 +25,7 @@ class Warehouse:
             self.stocks[title]["stock"] += qty
         else:
             self.stocks.update({title: {"stock": qty}})
+        return self.stocks
 
     def move_to_office(self, title: str, qty: int, office_dep: str):
         if title in self.stocks:
@@ -37,6 +38,7 @@ class Warehouse:
                 else:
                     self.stocks[title].update({"office": {office_dep: qty}})
                 self.stocks[title]["stock"] -= qty
+                return self.stocks
             else:
                 print(f"Не хватает количества товара {title} на складе. "
                       f"Остаток на складе: {self.stocks[title]['stock']}")
