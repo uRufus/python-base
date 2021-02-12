@@ -20,32 +20,33 @@
 class Warehouse:
     stocks = {}
 
-    def move_to_stock(self, title, qty):
+    def move_to_stock(self, title: str, qty: int):
         if title in self.stocks:
-            self.stocks[title]["On stock"] += qty
+            self.stocks[title]["stock"] += qty
         else:
-            self.stocks.update({title: {"On stock": qty}})
+            self.stocks.update({title: {"stock": qty}})
 
-    def move_to_office(self, title, qty, office_dep):
+    def move_to_office(self, title: str, qty: int, office_dep: str):
         if title in self.stocks:
-            if self.stocks[title]["On stock"] >= qty:
-                if "To office" in self.stocks[title]:
-                    if office_dep in self.stocks[title]["To office"]:
-                        self.stocks[title]["To office"][office_dep] += qty
+            if self.stocks[title]["stock"] >= qty:
+                if "office" in self.stocks[title]:
+                    if office_dep in self.stocks[title]["office"]:
+                        self.stocks[title]["office"][office_dep] += qty
                     else:
-                        self.stocks[title]["To office"][office_dep] = qty
+                        self.stocks[title]["office"][office_dep] = qty
                 else:
-                    self.stocks[title].update({"To office": {office_dep: qty}})
-                self.stocks[title]["On stock"] -= qty
+                    self.stocks[title].update({"office": {office_dep: qty}})
+                self.stocks[title]["stock"] -= qty
             else:
-                print(f"Не хватает количества товара на складе. Остаток на складе: {self.stocks[title]['On stock']}")
+                print(f"Не хватает количества товара {title} на складе. "
+                      f"Остаток на складе: {self.stocks[title]['stock']}")
         else:
-            print(f"Нет товара на складе")
+            print(f"Нет товара {title} на складе")
 
 
 class OfficeEquipment:
 
-    def __init__(self, title, height, length, width, weight):
+    def __init__(self, title: str, height: int, length: int, width: int, weight: int):
         self.title = title
         self.height = height
         self.length = length
@@ -70,6 +71,8 @@ scanner = Scanner("scanner", 40, 50, 60, 70)
 warehouse1 = Warehouse()
 warehouse1.move_to_stock(printer.title, 2)
 warehouse1.move_to_stock(scanner.title, 3)
+print(warehouse1.stocks)
+warehouse1.move_to_office(printer.title, 1, "IT department")
 print(warehouse1.stocks)
 warehouse1.move_to_office(printer.title, 1, "IT department")
 print(warehouse1.stocks)
