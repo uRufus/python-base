@@ -50,16 +50,7 @@ class Cell:
         self.cells //= other.cells
 
     def make_order(self, cells_in_stage):
-        cells_string = ""
-        cells_len = 0
-        for i in range(self.cells):
-            if cells_len < cells_in_stage:
-                cells_string += "*"
-                cells_len += 1
-            else:
-                cells_string += "\n*"
-                cells_len = 1
-        return cells_string
+        return "".join(["*" if i % cells_in_stage != 0 else "*\n" for i in range(1, self.cells + 1)])
 
 
 cell_a = Cell(16)
@@ -73,5 +64,5 @@ print(cell_a.cells)
 cell_a * cell_b
 print(cell_b.cells)
 print(cell_a.cells)
-print(cell_a.make_order(7))
+print(cell_a.make_order(5))
 
